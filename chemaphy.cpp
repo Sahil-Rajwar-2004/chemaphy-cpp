@@ -24,7 +24,7 @@ void display(vector<double> &data){
 
 string author = "Sahil Rajwar";
 string version = "2023.01.14";
-string homepage = "https://github.com/Sahil-Rajwar-2004/stats-lib";
+string homepage = "https://github.com/Sahil-Rajwar-2004/chemaphy";
 
 int error = -1;
 
