@@ -19,8 +19,7 @@ using namespace std;
 void display(vector<double> &data){
     for(int i=0;i<data.size();i++){
         cout<<data[i]<<" ";
-    }
-    cout<<endl;
+    }cout<<endl;
 }
 
 string author = "Sahil Rajwar";
