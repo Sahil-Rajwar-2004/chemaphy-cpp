@@ -1,7 +1,11 @@
-version-2023.01.11 (9:50 PM)(2023.01.12)
+version-2023.01.11 (9:50 PM)(2023/01/12)
 --------------------------
 Initial Release
 
-version-2023.01.13 (11:05 PM)(2023.01.13)
+version-2023.01.13 (11:05 PM)(2023/01/13)
 --------------------------
 Update: so many tools are added that are usefull for Machine Learning models.
+
+version-2023.01.14 (1:01 PM)(2023/01/14)
+--------------------------
+Update: More features were added like MSE(Mean Squared Error), MAE(Mean Absolute Error), etc
