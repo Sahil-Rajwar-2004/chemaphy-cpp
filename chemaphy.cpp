@@ -1,5 +1,5 @@
 /*
-    version-2023.01.15
+    version-2023.01.16
     Created by Sahil Rajwar
     Date: 11th January 2023
     HomePage: https://www.github.com/Sahil-Rajwar-2004/chemaphy-cpp
@@ -22,7 +22,7 @@ void display(vector<double> &data){
 }
 
 string author = "Sahil Rajwar";
-string version = "2023.01.15";
+string version = "2023.01.16";
 string homepage = "https://github.com/Sahil-Rajwar-2004/chemaphy-cpp";
 
 int error = -1;
@@ -106,6 +106,17 @@ class Constants{
         float radius_uranus = 25362000;
         float mass_neptune = 1.024e26;
         float radius_neptune = 24622000;
+};
+
+class Bitshift{
+    public:
+        int right_shift(int number,int times){
+            return number>>times;
+        }
+
+        int left_shift(int number,int times){
+            return number<<times;
+        }
 };
 
 class Mathematics{
