@@ -2,7 +2,7 @@
     version-2023.01.14
     Created by Sahil Rajwar
     Date: 11th January 2023
-    HomePage: https://www.github.com/Sahil-Rajwar-2004/statslib-cpp
+    HomePage: https://www.github.com/Sahil-Rajwar-2004/chemaphy-cpp
 */
 
 #include <iostream>
