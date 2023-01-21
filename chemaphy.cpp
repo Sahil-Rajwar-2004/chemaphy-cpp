@@ -1,5 +1,5 @@
 /*
-    version-2023.01.16
+    version-2023.01.21
     Created by Sahil Rajwar
     Date: 11th January 2023
     HomePage: https://www.github.com/Sahil-Rajwar-2004/chemaphy-cpp
@@ -15,6 +15,100 @@
 #include <climits>
 using namespace std;
 
+#define h 6.626e-34
+#define e 1.6e-19
+#define k 9e9
+#define c 3e8
+#define R 1.0973e7
+#define gas_const 8.3145
+#define pie 3.14159265358979323846
+#define exp 2.7182818284590452354
+
+#define ang 1e-10
+#define decillion 1e33
+#define nonillion 1e30
+#define octillion 1e27
+#define septollion 1e24
+#define sextillion 1e21
+#define quintillion 1e18
+#define exa 1e18
+#define quadrillion 1e15
+#define peta 1e15
+#define trillion 1e12
+#define tera 1e12
+#define billion 1e9
+#define giga 1e9
+#define ten_crore 1e8
+#define crore 1e7
+#define ten_lakh 1e6
+#define million 1e6
+#define mega 1e6
+#define lakh 1e5
+#define hundred_thousand 1e5
+#define ten_thousand 1e4
+#define thousand 1e3
+#define kilo 1e3
+#define hundred 1e3
+#define hecto 1e3
+#define one 1e0
+#define zero 0e0
+#define one_tenth 1e-1
+#define deci 1e-1
+#define one_hundredth 1e-2
+#define centi 1e-2
+#define one_thousandth 1e-3
+#define milli 1e-3
+#define one_millionth 1e-6
+#define micro 1e-6
+#define one_billionth 1e-9
+#define nano 1e-9
+#define one_trillionth 1e-12
+#define pico 1e-12
+#define one_quadrillionth 1e-15
+#define femto 1e-15
+#define one_quintillionth 1e-18
+#define atto 1e-18
+
+#define mass_electron 9.1e-31
+#define electron_amu 0.00054858
+#define mass_proton 1.67262e-27
+#define proton_amu 1.007825
+#define mass_neutron 1.67493e-27
+#define neutron_amu 1.008665
+
+#define gSun 274
+#define gMercury 3.7
+#define gVenus 8.87
+#define gEarth 9.8
+#define gMoon 1.62
+#define gMars 3.712
+#define gJupiter 24.79
+#define gSaturn 10.44
+#define gUranus 8.87
+#define gNeptune 11.1
+#define G 6.6743e-11
+
+#define mass_sun 1.989e30
+#define radius_sun 696340000
+#define mass_mercury 6.39e23
+#define radius_mercury 3389500
+#define mass_venus 4.867e24
+#define radius_venus 6051800
+#define mass_earth 5.972e24
+#define radius_earth 6371800
+#define mass_moon 7.347e22
+#define radius_moon 1737400
+#define mass_mars 6.39e23
+#define radius_mars 3389500
+#define mass_jupiter 1.898e27
+#define radius_jupiter 69911000
+#define mass_saturn 5.683e26
+#define radius_saturn 58232000
+#define mass_uranus 8.681e25
+#define radius_uranus 25362000
+#define mass_neptune 1.024e26
+#define radius_neptune 24622000
+
 void display(vector<double> &data){
     for(int i=0;i<data.size();i++){
         cout<<data[i]<<" ";
@@ -22,91 +116,10 @@ void display(vector<double> &data){
 }
 
 string author = "Sahil Rajwar";
-string version = "2023.01.16";
+string version = "2023.01.21";
 string homepage = "https://github.com/Sahil-Rajwar-2004/chemaphy-cpp";
 
 int error = -1;
-
-class Constants{
-    public:
-        float h = 6.626e-34;
-        float e = 1.6e-19;
-        float k = 9e9;
-        float c = 3e8;
-        float R = 1.0973e7;
-        float gas_const = 8.3145;
-        float pie = 3.14159265358979;
-        float exp = 2.71828182845904;
-        float null = nan("");
-
-        float ang = 1e-10;
-        float decillion = 1e33;
-        float nonillion = 1e30;
-        float octillion = 1e27;
-        float septollion = 1e24;
-        float sextillion = 1e21;
-        float quintillion = 1e18,exa = 1e18;
-        float quadrillion = 1e15,peta = 1e15;
-        float trillion = 1e12,tera = 1e12;
-        float billion = 1e9,giga = 1e9;
-        float ten_crore = 1e8;
-        float crore = 1e7;
-        float ten_lakh = 1e6,million = 1e6,mega = 1e6;
-        float lakh = 1e5,hundred_thousand = 1e5;
-        float ten_thousand = 1e4;
-        float thousand = 1e3,kilo = 1e3;
-        float hundred = 1e3,hecto = 1e3;
-        float one = 1e0;
-        float zero = 0e0;
-        float one_tenth = 1e-1,deci = 1e-1;
-        float one_hundredth = 1e-2,centi = 1e-2;
-        float one_thousandth = 1e-3,milli = 1e-3;
-        float one_millionth = 1e-6,micro = 1e-6;
-        float one_billionth = 1e-9,nano = 1e-9;
-        float one_trillionth = 1e-12,pico = 1e-12;
-        float one_quadrillionth = 1e-15,femto = 1e-15;
-        float one_quintillionth = 1e-18,atto = 1e-18;
-
-        float mass_electron = 9.1e-31;
-        float electron_amu = 0.00054858;
-        float mass_proton = 1.67262e-27;
-        float proton_amu = 1.007825;
-        float mass_neutron = 1.67493e-27;
-        float neutron_amu = 1.008665;
-
-        float gSun = 274;
-        float gMercury = 3.7;
-        float gVenus = 8.87;
-        float gEarth = 9.8;
-        float gMoon = 1.62;
-        float gMars = 3.712;
-        float gJupiter = 24.79;
-        float gSaturn = 10.44;
-        float gUranus = 8.87;
-        float gNeptune = 11.15;
-        float G = 6.6743e-11;
-
-        float mass_sun = 1.989e30;
-        float radius_sun = 696340000;
-        float mass_mercury = 6.39e23;
-        float radius_mercury = 3389500;
-        float mass_venus = 4.867e24;
-        float radius_venus = 6051800;
-        float mass_earth = 5.972e24;
-        float radius_earth = 6371800;
-        float mass_moon = 7.347e22;
-        float radius_moon = 1737400;
-        float mass_mars = 6.39e23;
-        float radius_mars = 3389500;
-        float mass_jupiter = 1.898e27;
-        float radius_jupiter = 69911000;
-        float mass_saturn = 5.683e26;
-        float radius_saturn = 58232000;
-        float mass_uranus = 8.681e25;
-        float radius_uranus = 25362000;
-        float mass_neptune = 1.024e26;
-        float radius_neptune = 24622000;
-};
 
 class Bitshift{
     public:
@@ -150,6 +163,35 @@ class Mathematics{
         }
 };
 
+class Physics{
+    public:
+        double horizontal_range(double velocity, double garvity, double angle){
+            return pow(velocity,2)*sin(2*angle*pie/180)/garvity;
+        }
+
+        double max_height(double velocity,double gravity,double angle){
+            return pow(velocity,2)*sin(angle*pie/180)/(2*gravity);
+        }
+
+        double time_interval(double velocity,double gravity,double angle){
+            return 2*velocity*sin(angle*pie/180)/gravity;
+        }
+};
+
+class Log{
+    public:
+        double log_10(double x){
+            return log10(x);
+        }
+
+        double log_e(double x){
+            return log(x);
+        }
+
+        double log_2(double x){
+            return log2(x);
+        }
+};
 
 class Statistics{
     public:
