@@ -13,3 +13,7 @@ Update: More features were added like MSE(Mean Squared Error), MAE(Mean Absolute
 version-2023.01.15 (12:00 PM)(2023/01/15)
 --------------------------
 Update: new class were added called Constants such as p(plank's constant),pie(3.14159), etc!
+
+version-2023.01.15 (6:28 PM)(2023/01/21)
+--------------------------
+Update: logarithmic function and constants were added
