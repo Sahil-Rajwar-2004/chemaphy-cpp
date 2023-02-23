@@ -17,3 +17,7 @@ Update: new class were added called Constants such as p(plank's constant),pie(3.
 version-2023.01.15 (6:28 PM)(2023/01/21)
 --------------------------
 Update: logarithmic function and constants were added
+
+version-2023.02.23 (6:28 PM)(2023/01/21)
+--------------------------
+Update: pie --> pi values
