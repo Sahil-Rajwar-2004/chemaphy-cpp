@@ -1,5 +1,5 @@
 /*
-    version-2023.01.21
+    version-2023.02.23
     Created by Sahil Rajwar
     Date: 11th January 2023
     HomePage: https://www.github.com/Sahil-Rajwar-2004/chemaphy-cpp
@@ -21,7 +21,7 @@ using namespace std;
 #define c 3e8
 #define R 1.0973e7
 #define gas_const 8.3145
-#define pie 3.14159265358979323846
+#define pi 3.14159265358979323846
 #define exp 2.7182818284590452354
 
 #define ang 1e-10
