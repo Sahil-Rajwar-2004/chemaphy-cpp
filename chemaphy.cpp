@@ -152,7 +152,7 @@ class Mathematics{
             return res;
         }
 
-        int absolute(float n){
+        int absolute(double n){
             if(n<0){
                 return -n;
             }else if(n == 0){
@@ -322,20 +322,19 @@ class Statistics{
             }return sum(res)/len(data);
         }
 
-        double sample_variance(vector<double> &data){
+        double variance(vector<double> &data,char kind='s'){
             vector<double> res;
             for(int i=0;i<len(data);i++){
                 float a = pow(data[i]-mean(data),2);
                 res.push_back(a);
-            }return sum(res)/(len(data)-1);
-        }
-
-        double population_variance(vector<double> &data){
-            vector<double> res;
-            for(int i=0;i<data.size();i++){
-                float a = pow(data[i]-mean(data),2);
-                res.push_back(a);
-            }return sum(res)/len(data);
+            }
+            if (kind == 's'){
+                return sum(res)/len(data)-1;
+            }else if (kind == 'p'){
+                return sum(res)/len(data);
+            }else{
+                return error;
+            };
         }
 
         double sample_standard_error(vector<double> &data){
