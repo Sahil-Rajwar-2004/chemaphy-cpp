@@ -1,5 +1,5 @@
 /*
-    version-2023.01.21
+    version-2023.02.23
     Created by Sahil Rajwar
     Date: 11th January 2023
     HomePage: https://www.github.com/Sahil-Rajwar-2004/chemaphy-cpp
@@ -116,7 +116,7 @@ void display(vector<double> &data){
 }
 
 string author = "Sahil Rajwar";
-string version = "2023.01.21";
+string version = "2023.02.23";
 string homepage = "https://github.com/Sahil-Rajwar-2004/chemaphy-cpp";
 
 int error = -1;
