@@ -1,5 +1,5 @@
 /*
-    version-2023.01.21
+    version-2023.02.23
     Created by Sahil Rajwar
     Date: 11th January 2023
     HomePage: https://www.github.com/Sahil-Rajwar-2004/chemaphy-cpp
@@ -21,7 +21,7 @@ using namespace std;
 #define c 3e8
 #define R 1.0973e7
 #define gas_const 8.3145
-#define pie 3.14159265358979323846
+#define pi 3.14159265358979323846
 #define exp 2.7182818284590452354
 
 #define ang 1e-10
@@ -116,7 +116,7 @@ void display(vector<double> &data){
 }
 
 string author = "Sahil Rajwar";
-string version = "2023.01.21";
+string version = "2023.02.23";
 string homepage = "https://github.com/Sahil-Rajwar-2004/chemaphy-cpp";
 
 int error = -1;
@@ -166,15 +166,15 @@ class Mathematics{
 class Physics{
     public:
         double horizontal_range(double velocity, double garvity, double angle){
-            return pow(velocity,2)*sin(2*angle*pie/180)/garvity;
+            return pow(velocity,2)*sin(2*angle*pi/180)/garvity;
         }
 
         double max_height(double velocity,double gravity,double angle){
-            return pow(velocity,2)*sin(angle*pie/180)/(2*gravity);
+            return pow(velocity,2)*sin(angle*pi/180)/(2*gravity);
         }
 
         double time_interval(double velocity,double gravity,double angle){
-            return 2*velocity*sin(angle*pie/180)/gravity;
+            return 2*velocity*sin(angle*pi/180)/gravity;
         }
 };
 
