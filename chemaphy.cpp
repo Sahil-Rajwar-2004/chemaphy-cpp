@@ -353,7 +353,7 @@ class Statistics{
             }return sqrt(sum(res)/len(data));
         }
 
-        double mse(vector<double> &actual,vector<double> &predicted){
+        double mean_squared_error(vector<double> &actual,vector<double> &predicted){
             if(len(actual)==len(predicted)){
                 vector<double> errors;
                 for(int i=0;i<len(actual);i++){
@@ -363,13 +363,13 @@ class Statistics{
             }return error;
         }
 
-        double rmse(vector<double> &actual, vector<double> &predicted){
+        double root_mean_squared_error(vector<double> &actual, vector<double> &predicted){
             if(len(actual)==len(predicted)){
-                return sqrt(mse(actual,predicted));
+                return sqrt(mean_squared_error(actual,predicted));
             }return error;
         }
 
-        double mae(vector<double> &actual, vector<double> &predicted){
+        double mean_absolute_error(vector<double> &actual, vector<double> &predicted){
             if(len(actual)==len(predicted)){
                 vector<double> errors;
                 for(int i=0;i<len(predicted);i++){
