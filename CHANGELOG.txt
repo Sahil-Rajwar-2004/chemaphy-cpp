@@ -21,3 +21,7 @@ Update: logarithmic function and constants were added
 version-2023.02.23 (6:28 PM)(2023/01/21)
 --------------------------
 Update: pie --> pi values
+
+version-2023.03.02 (10:19 PM)(2023/03/02)
+--------------------------
+Update: sorting an array + create an array
