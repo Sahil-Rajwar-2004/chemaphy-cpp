@@ -1,5 +1,5 @@
 /*
-    version-2023.02.23
+    version-2023.03.02
     Created by Sahil Rajwar
     Date: 11th January 2023
     HomePage: https://www.github.com/Sahil-Rajwar-2004/chemaphy-cpp
@@ -109,17 +109,37 @@ using namespace std;
 #define mass_neptune 1.024e26
 #define radius_neptune 24622000
 
-void display(vector<double> &data){
+#define error -1
+
+void display_vector(vector<double> &data){
     for(int i=0;i<data.size();i++){
         cout<<data[i]<<" ";
     }cout<<endl;
 }
 
-string author = "Sahil Rajwar";
-string version = "2023.02.23";
-string homepage = "https://github.com/Sahil-Rajwar-2004/chemaphy-cpp";
+void input_vector(vector<double> &data){
+    for(int i=0;i<data.size();i++){
+        int num;
+        cin>>num;
+        data.push_back(num);
+    }
+}
 
-int error = -1;
+void display_array(int array[],int size){
+    for(int i=0;i<size;i++){
+        cout<<array[i]<<" ";        
+    }cout<<endl;
+}
+
+void input_array(int array[],int size){
+    for(int i=0;i<size;i++){
+        cin>>array[i];
+    }
+}
+
+string author = "Sahil Rajwar";
+string version = "2023.03.02";
+string homepage = "https://github.com/Sahil-Rajwar-2004/chemaphy-cpp";
 
 class Bitshift{
     public:
@@ -129,6 +149,62 @@ class Bitshift{
 
         int left_shift(int number,int times){
             return number<<times;
+        }
+};
+
+class Search{
+    public:
+        int linear_search(int array[],int size,int target){
+            for(int i=0;i<size;i++){
+                if(array[i] == target){
+                    return i;
+                }
+            }
+            return error;
+        }
+
+        int binary_search(int arr[],int size,int target){
+            int left = 0;
+            int right = size-1;
+            while(left <= right){
+                int mid = left+(right-left)/2;
+                if(arr[mid] == target){
+                    return mid;
+                }else if(arr[mid] < target){
+                    left = mid+1;
+                }else{
+                    right = mid-1;
+                }
+            }
+            return error;
+        }
+};
+
+class Sort{
+    public:
+        void bubble_sort(int arr[],int size){
+            for(int i=0;i<size-1;i++){
+                for(int j=0;j<size-i-1;j++){
+                    if(arr[j]>arr[j+1]){
+                        int temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                    }
+                }
+            }
+        }
+
+        void insertion_sort(int arr[],int size){
+            int j,key;
+            for(int i=1;i<size;i++){
+                key = arr[i];
+                j = i-1;
+                while(j >= 0 && arr[j] > key){
+                    arr[j+1] = arr[j];
+                    j--;
+                }
+                arr[j+1] = key;
+            }
         }
 };
 
@@ -152,13 +228,32 @@ class Mathematics{
             return res;
         }
 
-        int absolute(double n){
+        int absolute(float n){
             if(n<0){
                 return -n;
             }else if(n == 0){
                 return 0;
             }else{
                 return n;
+            }
+        }
+
+        double power(double base,int exponent){
+            double p = 1.0;
+            if(exponent>0){
+                for(int i=0;i<exponent;i++){
+                    p*=base;
+                }
+                return p;
+            }else if(exponent==0){
+                return 1;
+            }else if(exponent<0){
+                for(int i=exponent;i<exponent;i--){
+                    p*=(1/base);
+                }
+                return p;
+            }else{
+                return error;
             }
         }
 };
@@ -228,7 +323,7 @@ class Statistics{
             }return p;
         }
 
-		double len(vector<double> &data){
+		double len_vector(vector<double> &data){
 			return data.size();
 		}
 		
@@ -300,7 +395,7 @@ class Statistics{
 
         double square_sum(vector<double> &data){
             float sum = 1.0;
-            for(int i=0;i<len(data);i++){
+            for(int i=0;i<len_vector(data);i++){
                 float sq = pow(data[i],2);
                 sum += sq;
             }return sum;
@@ -308,10 +403,10 @@ class Statistics{
 
         double sample_standard_deviation(vector<double> &data){
             vector<double> res;
-            for(int i=0;i<len(data);i++){
+            for(int i=0;i<len_vector(data);i++){
                 float x = pow(data[i]-mean(data),2);
                 res.push_back(x);
-            }return sqrt(sum(res)/(len(data)-1));
+            }return sqrt(sum(res)/(len_vector(data)-1));
         }
 
         double population_standard_deviation(vector<double> &data){
@@ -319,80 +414,81 @@ class Statistics{
             for(int i=0;i<data.size();i++){
                 float a = pow(data[i]-mean(data),2);
                 res.push_back(a);
-            }return sum(res)/len(data);
+            }return sum(res)/len_vector(data);
         }
 
-        double variance(vector<double> &data,char kind='s'){
+        double sample_variance(vector<double> &data){
             vector<double> res;
-            for(int i=0;i<len(data);i++){
+            for(int i=0;i<len_vector(data);i++){
                 float a = pow(data[i]-mean(data),2);
                 res.push_back(a);
-            }
-            if (kind == 's'){
-                return sum(res)/len(data)-1;
-            }else if (kind == 'p'){
-                return sum(res)/len(data);
-            }else{
-                return error;
-            };
+            }return sum(res)/(len_vector(data)-1);
+        }
+
+        double population_variance(vector<double> &data){
+            vector<double> res;
+            for(int i=0;i<data.size();i++){
+                float a = pow(data[i]-mean(data),2);
+                res.push_back(a);
+            }return sum(res)/len_vector(data);
         }
 
         double sample_standard_error(vector<double> &data){
-            return sample_standard_deviation(data)/sqrt(len(data));
+            return sample_standard_deviation(data)/sqrt(len_vector(data));
         }
 
         double population_standard_error(vector<double> &data){
-            return population_standard_deviation(data)/sqrt(len(data));
+            return population_standard_deviation(data)/sqrt(len_vector(data));
         }
 
-        double rms(vector<double> &data){
+        double root_mean_squared(vector<double> &data){
             vector<double> res;
             for(int i=0;i<data.size();i++){
                 float a = pow(data[i],2);
                 res.push_back(a);
-            }return sqrt(sum(res)/len(data));
+            }return sqrt(sum(res)/len_vector(data));
         }
 
         double mean_squared_error(vector<double> &actual,vector<double> &predicted){
-            if(len(actual)==len(predicted)){
+            if(len_vector(actual)==len_vector(predicted)){
                 vector<double> errors;
-                for(int i=0;i<len(actual);i++){
+                for(int i=0;i<len_vector(actual);i++){
                     float a = pow(actual[i]-predicted[i],2);
                     errors.push_back(a);
-                }return sum(errors)/len(actual);
+                }return sum(errors)/len_vector(actual);
             }return error;
         }
 
         double root_mean_squared_error(vector<double> &actual, vector<double> &predicted){
-            if(len(actual)==len(predicted)){
+            if(len_vector(actual)==len_vector(predicted)){
                 return sqrt(mean_squared_error(actual,predicted));
             }return error;
         }
 
         double mean_absolute_error(vector<double> &actual, vector<double> &predicted){
-            if(len(actual)==len(predicted)){
+            if(len_vector(actual)==len_vector(predicted)){
                 vector<double> errors;
-                for(int i=0;i<len(predicted);i++){
+                for(int i=0;i<len_vector(predicted);i++){
                     float a = maths.absolute(actual[i]-predicted[i]);
                     errors.push_back(a);
-                }return sum(errors)/len(actual);
+                }return sum(errors)/len_vector(actual);
             }return error;
         }
 
         double cost_function(vector<double> &actual,vector<double> &predicted){
-            if(len(actual)==len(predicted)){
+            if(len_vector(actual)==len_vector(predicted)){
                 vector<double> errors;
-                for(int i=0;i<len(predicted);i++){
+                for(int i=0;i<len_vector(predicted);i++){
                     float a = pow(actual[i]-predicted[i],2);
                     errors.push_back(a);
-                }return sum(errors)/(2*len(actual));
+                }return sum(errors)/(2*len_vector(actual));
             }return error;
         }
 
         double mean_error(vector<double> &actual,vector<double> &expected){
-            if(len(actual)==len(expected)){
+            if(len_vector(actual)==len_vector(expected)){
                 vector<double> errors;
-                for(int i=0;i<len(expected);i++){
+                for(int i=0;i<len_vector(expected);i++){
                     float a = actual[i] - expected[i];
                     errors.push_back(a);
                 }return mean(errors);
@@ -400,13 +496,13 @@ class Statistics{
         }
 
         double accuracy(vector<double> &actual,vector<double> &expected){
-            if(len(actual)==len(expected)){
+            if(len_vector(actual)==len_vector(expected)){
                 int score = 0;
-                for(int i=0;i<len(expected);i++){
+                for(int i=0;i<len_vector(expected);i++){
                     if(actual[i] == expected[i]){
                         ++score;
                     }
-                }return score/len(actual);
+                }return score/len_vector(actual);
             }return error;
         }
 };
